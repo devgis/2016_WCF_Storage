@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EMSWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EMSWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="cUnitsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accounts" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gathering" type="xs:float" />
+      <xs:element minOccurs="0" name="LinkMan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Payment" type="xs:float" />
+      <xs:element minOccurs="0" name="Tax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cUnitsInfo" nillable="true" type="tns:cUnitsInfo" />
+  <xs:complexType name="cStockInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AveragePrice" type="xs:float" />
+      <xs:element minOccurs="0" name="Check" type="xs:float" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LowerLimit" type="xs:float" />
+      <xs:element minOccurs="0" name="Price" type="xs:float" />
+      <xs:element minOccurs="0" name="Produce" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qty" type="xs:float" />
+      <xs:element minOccurs="0" name="SalePrice" type="xs:float" />
+      <xs:element minOccurs="0" name="Standard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpperLimit" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cStockInfo" nillable="true" type="tns:cStockInfo" />
+  <xs:complexType name="cEmployeeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cEmployeeInfo" nillable="true" type="tns:cEmployeeInfo" />
+  <xs:complexType name="cBillInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullPayment" type="xs:float" />
+      <xs:element minOccurs="0" name="Handle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Payment" type="xs:float" />
+      <xs:element minOccurs="0" name="Price" type="xs:float" />
+      <xs:element minOccurs="0" name="Qty" type="xs:float" />
+      <xs:element minOccurs="0" name="Summary" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TSum" type="xs:float" />
+      <xs:element minOccurs="0" name="TradeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Units" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cBillInfo" nillable="true" type="tns:cBillInfo" />
+  <xs:complexType name="cCurrentAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddGathering" type="xs:float" />
+      <xs:element minOccurs="0" name="Balance" type="xs:float" />
+      <xs:element minOccurs="0" name="BillCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FactAddFee" type="xs:float" />
+      <xs:element minOccurs="0" name="FactReduceGathering" type="xs:float" />
+      <xs:element minOccurs="0" name="ReduceGathering" type="xs:float" />
+      <xs:element minOccurs="0" name="Units" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cCurrentAccount" nillable="true" type="tns:cCurrentAccount" />
+  <xs:complexType name="cUnits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accounts" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Linkman" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cUnits" nillable="true" type="tns:cUnits" />
+  <xs:complexType name="cPopedom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Base_Info" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stock" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Storage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SysUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemSet" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Vendition" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cPopedom" nillable="true" type="tns:cPopedom" />
+</xs:schema>

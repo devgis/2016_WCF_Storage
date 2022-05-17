@@ -1,0 +1,1256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DBService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5631/DBService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5631/DBService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5631/DBService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EMSWCF" />
+      <xsd:import schemaLocation="http://localhost:5631/DBService.svc?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDBService_AddUnits_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUnits" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddUnits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateUnits_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUnits" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateUnits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_DeleteUnits_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUnits" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_DeleteUnits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindUnitsByUnitCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUnitsByUnitCode" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindUnitsByUnitCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUnitsByUnitCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindUnitsByFullName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUnitsByFullName" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindUnitsByFullName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUnitsByFullNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllUnits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUnits" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllUnits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStock" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStock" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_DeleteStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStock" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_DeleteStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindStockByProduce_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindStockByProduce" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindStockByProduce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindStockByProduceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindStockByFullName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindStockByFullName" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindStockByFullName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindStockByFullNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStock" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_DeleteEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_DeleteEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindEmployeeByDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindEmployeeByDept" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindEmployeeByDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindEmployeeByDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindEmployeeByFullName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindEmployeeByFullName" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindEmployeeByFullName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindEmployeeByFullNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBill" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddTableMainWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTableMainWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddTableMainWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTableMainWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddTableMainSellhouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTableMainSellhouse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddTableMainSellhouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTableMainSellhouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddTableDetailedWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTableDetailedWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddTableDetailedWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTableDetailedWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateStock_QtyAndAveragerprice_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStock_QtyAndAveragerprice" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateStock_QtyAndAveragerprice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStock_QtyAndAveragerpriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateSaleStock_Qty_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSaleStock_Qty" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateSaleStock_Qty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSaleStock_QtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateStock_Qty_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStock_Qty" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateStock_Qty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStock_QtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetStockByTrade_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockByTrade" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetStockByTrade_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockByTradeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddCurrentAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCurrentAccount" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddCurrentAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCurrentAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BuyStockAnalyse_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuyStockAnalyse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BuyStockAnalyse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuyStockAnalyseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BuyAllStockAnalyse_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuyAllStockAnalyse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BuyAllStockAnalyse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuyAllStockAnalyseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BuyStockSumDetailed_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuyStockSumDetailed" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BuyStockSumDetailed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuyStockSumDetailedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BuyStockSum_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuyStockSum" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BuyStockSum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuyStockSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SellStockSumDetailed_InputMessage">
+    <wsdl:part name="parameters" element="tns:SellStockSumDetailed" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SellStockSumDetailed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SellStockSumDetailedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SellStockSum_InputMessage">
+    <wsdl:part name="parameters" element="tns:SellStockSum" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SellStockSum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SellStockSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SellStockStatusSum_InputMessage">
+    <wsdl:part name="parameters" element="tns:SellStockStatusSum" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SellStockStatusSum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SellStockStatusSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SellStockDetailed_InputMessage">
+    <wsdl:part name="parameters" element="tns:SellStockDetailed" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SellStockDetailed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SellStockDetailedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SetUnitsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUnitsList" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SetUnitsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUnitsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SetHandleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetHandleList" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_SetHandleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetHandleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetTSumDesc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTSumDesc" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetTSumDesc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTSumDescResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetQtyDesc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQtyDesc" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetQtyDesc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQtyDescResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetDetailedkByBillCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailedkByBillCode" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetDetailedkByBillCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDetailedkByBillCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetStockByTradeCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockByTradeCode" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetStockByTradeCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockByTradeCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindSellStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSellStock" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindSellStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSellStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_setStockStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:setStockStatus" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_setStockStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setStockStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetStockLimitByTradeCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockLimitByTradeCode" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetStockLimitByTradeCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockLimitByTradeCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateStockLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStockLimit" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateStockLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStockLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetLowerLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLowerLimit" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetLowerLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLowerLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetUpperLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpperLimit" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetUpperLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpperLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_CheckStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStock" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_CheckStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateSysUnits_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUnits" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateSysUnits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_InsertSysUnits_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSysUnits" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_InsertSysUnits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSysUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUnit" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BackUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:BackUp" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_BackUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BackUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_ReStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReStore" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_ReStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_ClearTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearTable" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_ClearTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddSysUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysUser" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AddSysUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_DeleteSysUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSysUser" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_DeleteSysUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSysUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUser" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserName" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateSysUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUser" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UpdateSysUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetUnitsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnitsList" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetUnitsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnitsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindCurrentAccountDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindCurrentAccountDate" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindCurrentAccountDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindCurrentAccountDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindDetailde_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindDetailde" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindDetailde_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindDetaildeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMain" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_FindMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_OpenInernet_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenInernet" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_OpenInernet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenInernetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDBService">
+    <wsdl:operation name="AddUnits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AddUnits" message="tns:IDBService_AddUnits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AddUnitsResponse" message="tns:IDBService_AddUnits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateUnits" message="tns:IDBService_UpdateUnits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateUnitsResponse" message="tns:IDBService_UpdateUnits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUnits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/DeleteUnits" message="tns:IDBService_DeleteUnits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/DeleteUnitsResponse" message="tns:IDBService_DeleteUnits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUnitsByUnitCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindUnitsByUnitCode" message="tns:IDBService_FindUnitsByUnitCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindUnitsByUnitCodeResponse" message="tns:IDBService_FindUnitsByUnitCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUnitsByFullName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindUnitsByFullName" message="tns:IDBService_FindUnitsByFullName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindUnitsByFullNameResponse" message="tns:IDBService_FindUnitsByFullName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetAllUnits" message="tns:IDBService_GetAllUnits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetAllUnitsResponse" message="tns:IDBService_GetAllUnits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AddStock" message="tns:IDBService_AddStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AddStockResponse" message="tns:IDBService_AddStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateStock" message="tns:IDBService_UpdateStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateStockResponse" message="tns:IDBService_UpdateStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/DeleteStock" message="tns:IDBService_DeleteStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/DeleteStockResponse" message="tns:IDBService_DeleteStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindStockByProduce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindStockByProduce" message="tns:IDBService_FindStockByProduce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindStockByProduceResponse" message="tns:IDBService_FindStockByProduce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindStockByFullName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindStockByFullName" message="tns:IDBService_FindStockByFullName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindStockByFullNameResponse" message="tns:IDBService_FindStockByFullName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetAllStock" message="tns:IDBService_GetAllStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetAllStockResponse" message="tns:IDBService_GetAllStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AddEmployee" message="tns:IDBService_AddEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AddEmployeeResponse" message="tns:IDBService_AddEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateEmployee" message="tns:IDBService_UpdateEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateEmployeeResponse" message="tns:IDBService_UpdateEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/DeleteEmployee" message="tns:IDBService_DeleteEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/DeleteEmployeeResponse" message="tns:IDBService_DeleteEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindEmployeeByDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindEmployeeByDept" message="tns:IDBService_FindEmployeeByDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindEmployeeByDeptResponse" message="tns:IDBService_FindEmployeeByDept_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindEmployeeByFullName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindEmployeeByFullName" message="tns:IDBService_FindEmployeeByFullName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindEmployeeByFullNameResponse" message="tns:IDBService_FindEmployeeByFullName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetAllEmployee" message="tns:IDBService_GetAllEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetAllEmployeeResponse" message="tns:IDBService_GetAllEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetAllBill" message="tns:IDBService_GetAllBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetAllBillResponse" message="tns:IDBService_GetAllBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTableMainWarehouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AddTableMainWarehouse" message="tns:IDBService_AddTableMainWarehouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AddTableMainWarehouseResponse" message="tns:IDBService_AddTableMainWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTableMainSellhouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AddTableMainSellhouse" message="tns:IDBService_AddTableMainSellhouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AddTableMainSellhouseResponse" message="tns:IDBService_AddTableMainSellhouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTableDetailedWarehouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AddTableDetailedWarehouse" message="tns:IDBService_AddTableDetailedWarehouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AddTableDetailedWarehouseResponse" message="tns:IDBService_AddTableDetailedWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStock_QtyAndAveragerprice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateStock_QtyAndAveragerprice" message="tns:IDBService_UpdateStock_QtyAndAveragerprice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateStock_QtyAndAveragerpriceResponse" message="tns:IDBService_UpdateStock_QtyAndAveragerprice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleStock_Qty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateSaleStock_Qty" message="tns:IDBService_UpdateSaleStock_Qty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateSaleStock_QtyResponse" message="tns:IDBService_UpdateSaleStock_Qty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStock_Qty">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateStock_Qty" message="tns:IDBService_UpdateStock_Qty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateStock_QtyResponse" message="tns:IDBService_UpdateStock_Qty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockByTrade">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetStockByTrade" message="tns:IDBService_GetStockByTrade_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetStockByTradeResponse" message="tns:IDBService_GetStockByTrade_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCurrentAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AddCurrentAccount" message="tns:IDBService_AddCurrentAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AddCurrentAccountResponse" message="tns:IDBService_AddCurrentAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyStockAnalyse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/BuyStockAnalyse" message="tns:IDBService_BuyStockAnalyse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/BuyStockAnalyseResponse" message="tns:IDBService_BuyStockAnalyse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyAllStockAnalyse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/BuyAllStockAnalyse" message="tns:IDBService_BuyAllStockAnalyse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/BuyAllStockAnalyseResponse" message="tns:IDBService_BuyAllStockAnalyse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyStockSumDetailed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/BuyStockSumDetailed" message="tns:IDBService_BuyStockSumDetailed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/BuyStockSumDetailedResponse" message="tns:IDBService_BuyStockSumDetailed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyStockSum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/BuyStockSum" message="tns:IDBService_BuyStockSum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/BuyStockSumResponse" message="tns:IDBService_BuyStockSum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SellStockSumDetailed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/SellStockSumDetailed" message="tns:IDBService_SellStockSumDetailed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/SellStockSumDetailedResponse" message="tns:IDBService_SellStockSumDetailed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SellStockSum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/SellStockSum" message="tns:IDBService_SellStockSum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/SellStockSumResponse" message="tns:IDBService_SellStockSum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SellStockStatusSum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/SellStockStatusSum" message="tns:IDBService_SellStockStatusSum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/SellStockStatusSumResponse" message="tns:IDBService_SellStockStatusSum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SellStockDetailed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/SellStockDetailed" message="tns:IDBService_SellStockDetailed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/SellStockDetailedResponse" message="tns:IDBService_SellStockDetailed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUnitsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/SetUnitsList" message="tns:IDBService_SetUnitsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/SetUnitsListResponse" message="tns:IDBService_SetUnitsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetHandleList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/SetHandleList" message="tns:IDBService_SetHandleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/SetHandleListResponse" message="tns:IDBService_SetHandleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTSumDesc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetTSumDesc" message="tns:IDBService_GetTSumDesc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetTSumDescResponse" message="tns:IDBService_GetTSumDesc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQtyDesc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetQtyDesc" message="tns:IDBService_GetQtyDesc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetQtyDescResponse" message="tns:IDBService_GetQtyDesc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedkByBillCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetDetailedkByBillCode" message="tns:IDBService_GetDetailedkByBillCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetDetailedkByBillCodeResponse" message="tns:IDBService_GetDetailedkByBillCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockByTradeCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetStockByTradeCode" message="tns:IDBService_GetStockByTradeCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetStockByTradeCodeResponse" message="tns:IDBService_GetStockByTradeCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSellStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindSellStock" message="tns:IDBService_FindSellStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindSellStockResponse" message="tns:IDBService_FindSellStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setStockStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/setStockStatus" message="tns:IDBService_setStockStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/setStockStatusResponse" message="tns:IDBService_setStockStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockLimitByTradeCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetStockLimitByTradeCode" message="tns:IDBService_GetStockLimitByTradeCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetStockLimitByTradeCodeResponse" message="tns:IDBService_GetStockLimitByTradeCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStockLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateStockLimit" message="tns:IDBService_UpdateStockLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateStockLimitResponse" message="tns:IDBService_UpdateStockLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLowerLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetLowerLimit" message="tns:IDBService_GetLowerLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetLowerLimitResponse" message="tns:IDBService_GetLowerLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpperLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetUpperLimit" message="tns:IDBService_GetUpperLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetUpperLimitResponse" message="tns:IDBService_GetUpperLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/CheckStock" message="tns:IDBService_CheckStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/CheckStockResponse" message="tns:IDBService_CheckStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysUnits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateSysUnits" message="tns:IDBService_UpdateSysUnits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateSysUnitsResponse" message="tns:IDBService_UpdateSysUnits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSysUnits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/InsertSysUnits" message="tns:IDBService_InsertSysUnits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/InsertSysUnitsResponse" message="tns:IDBService_InsertSysUnits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetAllUnit" message="tns:IDBService_GetAllUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetAllUnitResponse" message="tns:IDBService_GetAllUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BackUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/BackUp" message="tns:IDBService_BackUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/BackUpResponse" message="tns:IDBService_BackUp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReStore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/ReStore" message="tns:IDBService_ReStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/ReStoreResponse" message="tns:IDBService_ReStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/ClearTable" message="tns:IDBService_ClearTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/ClearTableResponse" message="tns:IDBService_ClearTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AddSysUser" message="tns:IDBService_AddSysUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AddSysUserResponse" message="tns:IDBService_AddSysUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSysUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/DeleteSysUser" message="tns:IDBService_DeleteSysUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/DeleteSysUserResponse" message="tns:IDBService_DeleteSysUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetAllUser" message="tns:IDBService_GetAllUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetAllUserResponse" message="tns:IDBService_GetAllUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindUserName" message="tns:IDBService_FindUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindUserNameResponse" message="tns:IDBService_FindUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UpdateSysUser" message="tns:IDBService_UpdateSysUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UpdateSysUserResponse" message="tns:IDBService_UpdateSysUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetUnitsList" message="tns:IDBService_GetUnitsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetUnitsListResponse" message="tns:IDBService_GetUnitsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCurrentAccountDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindCurrentAccountDate" message="tns:IDBService_FindCurrentAccountDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindCurrentAccountDateResponse" message="tns:IDBService_FindCurrentAccountDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDetailde">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindDetailde" message="tns:IDBService_FindDetailde_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindDetaildeResponse" message="tns:IDBService_FindDetailde_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/FindMain" message="tns:IDBService_FindMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/FindMainResponse" message="tns:IDBService_FindMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenInernet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/OpenInernet" message="tns:IDBService_OpenInernet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/OpenInernetResponse" message="tns:IDBService_OpenInernet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/Login" message="tns:IDBService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/LoginResponse" message="tns:IDBService_Login_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDBService" type="tns:IDBService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUnits">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AddUnits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnits">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateUnits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUnits">
+      <soap:operation soapAction="http://tempuri.org/IDBService/DeleteUnits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUnitsByUnitCode">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindUnitsByUnitCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUnitsByFullName">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindUnitsByFullName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnits">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetAllUnits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStock">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AddStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStock">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStock">
+      <soap:operation soapAction="http://tempuri.org/IDBService/DeleteStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindStockByProduce">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindStockByProduce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindStockByFullName">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindStockByFullName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStock">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetAllStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmployee">
+      <soap:operation soapAction="http://tempuri.org/IDBService/DeleteEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindEmployeeByDept">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindEmployeeByDept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindEmployeeByFullName">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindEmployeeByFullName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployee">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetAllEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBill">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetAllBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTableMainWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AddTableMainWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTableMainSellhouse">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AddTableMainSellhouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTableDetailedWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AddTableDetailedWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStock_QtyAndAveragerprice">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateStock_QtyAndAveragerprice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleStock_Qty">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateSaleStock_Qty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStock_Qty">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateStock_Qty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockByTrade">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetStockByTrade" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCurrentAccount">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AddCurrentAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyStockAnalyse">
+      <soap:operation soapAction="http://tempuri.org/IDBService/BuyStockAnalyse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyAllStockAnalyse">
+      <soap:operation soapAction="http://tempuri.org/IDBService/BuyAllStockAnalyse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyStockSumDetailed">
+      <soap:operation soapAction="http://tempuri.org/IDBService/BuyStockSumDetailed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyStockSum">
+      <soap:operation soapAction="http://tempuri.org/IDBService/BuyStockSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellStockSumDetailed">
+      <soap:operation soapAction="http://tempuri.org/IDBService/SellStockSumDetailed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellStockSum">
+      <soap:operation soapAction="http://tempuri.org/IDBService/SellStockSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellStockStatusSum">
+      <soap:operation soapAction="http://tempuri.org/IDBService/SellStockStatusSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SellStockDetailed">
+      <soap:operation soapAction="http://tempuri.org/IDBService/SellStockDetailed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUnitsList">
+      <soap:operation soapAction="http://tempuri.org/IDBService/SetUnitsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetHandleList">
+      <soap:operation soapAction="http://tempuri.org/IDBService/SetHandleList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTSumDesc">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetTSumDesc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQtyDesc">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetQtyDesc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailedkByBillCode">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetDetailedkByBillCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockByTradeCode">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetStockByTradeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindSellStock">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindSellStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setStockStatus">
+      <soap:operation soapAction="http://tempuri.org/IDBService/setStockStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockLimitByTradeCode">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetStockLimitByTradeCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStockLimit">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateStockLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLowerLimit">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetLowerLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpperLimit">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetUpperLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStock">
+      <soap:operation soapAction="http://tempuri.org/IDBService/CheckStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysUnits">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateSysUnits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSysUnits">
+      <soap:operation soapAction="http://tempuri.org/IDBService/InsertSysUnits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnit">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetAllUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BackUp">
+      <soap:operation soapAction="http://tempuri.org/IDBService/BackUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReStore">
+      <soap:operation soapAction="http://tempuri.org/IDBService/ReStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearTable">
+      <soap:operation soapAction="http://tempuri.org/IDBService/ClearTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSysUser">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AddSysUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSysUser">
+      <soap:operation soapAction="http://tempuri.org/IDBService/DeleteSysUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetAllUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUserName">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysUser">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UpdateSysUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitsList">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetUnitsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCurrentAccountDate">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindCurrentAccountDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDetailde">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindDetailde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindMain">
+      <soap:operation soapAction="http://tempuri.org/IDBService/FindMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenInernet">
+      <soap:operation soapAction="http://tempuri.org/IDBService/OpenInernet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IDBService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBService">
+    <wsdl:port name="BasicHttpBinding_IDBService" binding="tns:BasicHttpBinding_IDBService">
+      <soap:address location="http://localhost:5631/DBService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

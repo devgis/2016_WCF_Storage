@@ -1,0 +1,14 @@
+C:\Users\liyafei\Desktop\01\EMS\EMSWCF\bin\EMSWCF.dll
+C:\Users\liyafei\Desktop\01\EMS\EMSWCF\bin\EMSWCF.pdb
+C:\Users\liyafei\Desktop\01\EMS\EMSWCF\obj\Debug\EMSWCF.dll
+C:\Users\liyafei\Desktop\01\EMS\EMSWCF\obj\Debug\EMSWCF.pdb
+D:\Work\2016\Stock\01\EMS\EMSWCF\bin\EMSWCF.dll
+D:\Work\2016\Stock\01\EMS\EMSWCF\bin\EMSWCF.pdb
+D:\Work\2016\Stock\01\EMS\EMSWCF\obj\Debug\EMSWCF.dll
+D:\Work\2016\Stock\01\EMS\EMSWCF\obj\Debug\EMSWCF.pdb
+F:\Demo\EMS06\EMS\EMSWCF\bin\EMSWCF.dll.config
+F:\Demo\EMS06\EMS\EMSWCF\bin\EMSWCF.dll
+F:\Demo\EMS06\EMS\EMSWCF\bin\EMSWCF.pdb
+F:\Demo\EMS06\EMS\EMSWCF\obj\Debug\EMSWCF.csprojResolveAssemblyReference.cache
+F:\Demo\EMS06\EMS\EMSWCF\obj\Debug\EMSWCF.dll
+F:\Demo\EMS06\EMS\EMSWCF\obj\Debug\EMSWCF.pdb
